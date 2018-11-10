@@ -1,0 +1,37 @@
+<%= form_for(letter) do |f| %>
+  <% if letter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(letter.errors.count, "error") %> prohibited this letter from being saved:</h2>
+
+      <ul>
+      <% letter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= f.label :letter_location %>
+    <%= f.text_field :letter_location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_mailed %>
+    <%= f.date_select :date_mailed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :time_mailed %>
+    <%= f.time_select :time_mailed %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
