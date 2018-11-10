@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-	def base_page
+	def home
 	end
 end
 
